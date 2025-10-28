@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './TimePeriodController.module.sass'
-import LeftArrowSVG from '../../assets/images/left-arrow.svg'
-import RightArrowSVG from '../../assets/images/right-arrow.svg'
+import LeftArrowIcon from '../IconComponents/LeftArrowIcon'
+import RightArrowIcon from '../IconComponents/RightArrowIcon'
 
 interface TimePeriodControllerProps {
   currentIndex: number
@@ -39,7 +39,7 @@ const TimePeriodController: React.FC<TimePeriodControllerProps> = ({
           disabled={isFirstPeriod}
           onClick={onPrev}
         >
-          <img src={LeftArrowSVG} alt='Previous time period' />
+          <LeftArrowIcon />
         </button>
         <button
           className={styles.timePeriodControllerButton}
@@ -47,7 +47,7 @@ const TimePeriodController: React.FC<TimePeriodControllerProps> = ({
           disabled={isLastPeriod}
           onClick={onNext}
         >
-          <img src={RightArrowSVG} alt='Next time period' />
+          <RightArrowIcon />
         </button>
       </div>
     </div>

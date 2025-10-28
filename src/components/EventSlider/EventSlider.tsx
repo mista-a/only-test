@@ -5,9 +5,9 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/swiper.css'
 
 import styles from './EventSlider.module.sass'
-import LeftArrowIcon from '../../assets/images/left-arrow.svg'
-import RightArrowIcon from '../../assets/images/right-arrow.svg'
 import { Event } from '../../types/TimePeriod'
+import RightArrowIcon from '../IconComponents/RightArrowIcon'
+import LeftArrowIcon from '../IconComponents/LeftArrowIcon'
 
 interface EventsSliderProps {
   events: Event[]
@@ -46,7 +46,7 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
       style={sliderStyle}
     >
       <button className={`${styles.sliderButton} ${styles.prevButton}`}>
-        <img src={LeftArrowIcon} alt='Previous slide' />
+        <LeftArrowIcon />
       </button>
       <Swiper
         modules={[Navigation]}
@@ -76,7 +76,7 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
         ))}
       </Swiper>
       <button className={`${styles.sliderButton} ${styles.nextButton}`}>
-        <img src={RightArrowIcon} alt='Next slide' />
+        <RightArrowIcon />
       </button>
     </div>
   )
