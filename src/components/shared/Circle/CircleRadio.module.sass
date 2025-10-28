@@ -1,0 +1,62 @@
+@use "../../../styles/variables"
+
+.circleContainer
+  position: relative
+
+.circle
+  border: 1px solid variables.color('border')
+  border-radius: 50%
+  transition: transform 0.5s ease
+
+.pointsContainer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  transition: transform 0.5s ease
+
+// .pointWrapper
+
+.point
+  position: absolute
+  z-index: 1
+  border-radius: 50%
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: all 0.3s ease
+
+  transform: scale(var(--visual-scale))
+  transform-origin: center
+  border: 1px solid variables.color('border')
+  background: variables.color('black_blue')
+
+.point
+  &:hover, &Active
+    transition: transform 0.3s ease
+    background: #f4f5f9
+    transform: scale(1)
+
+.pointContent
+  position: relative
+  transition: transform 0.5s
+
+.pointNumber
+  opacity: 1
+  font-weight: bold
+  color: black
+  font-size: 20px
+  transition: transform 0.5s
+
+.pointLabel
+  position: absolute
+  left: 50px
+  font-weight: bold
+  font-size: 20px
+  line-height: 30px
+  opacity: 0
+  transition: opacity 1.5s
+  &Active
+    opacity: 1

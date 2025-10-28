@@ -1,0 +1,26 @@
+@use "../../styles/variables"
+@use "../../styles/breakpoints"
+
+.timePeriodWrapper
+  display: flex
+  justify-content: center
+
+.timePeriod
+  gap: 40px
+  display: flex
+  justify-content: center
+  width: 100%
+  line-height: 1.1
+  font-size: clamp(3.5rem, 10vw, 12.5rem)
+  font-weight: bold
+  letter-spacing: -2px
+  user-select: none
+  +breakpoints.mobile
+    max-width: 273px
+    min-width: 273px
+
+.timePeriodFrom
+  color: variables.color('iris')
+
+.timePeriodTo
+  color: variables.color('fuschina')

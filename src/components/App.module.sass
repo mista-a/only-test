@@ -1,0 +1,47 @@
+@use "../styles/variables"
+@use "../styles/breakpoints"
+
+.wrapper
+  display: flex
+  flex-direction: column
+  gap: 56px
+
+  position: relative
+  max-width: 1440px
+  height: 100vh
+  padding-top: 170px
+  margin-left: 320px
+  margin-right: 160px
+
+  background: (
+    linear-gradient(to right, variables.color('border') 1px, transparent 1px) center
+  )
+  background-size: 1px 100%, 100% 1px
+  background-repeat: no-repeat
+
+  border-left: 1px solid variables.color('border')
+  border-right: 1px solid variables.color('border')
+  +breakpoints.mobile
+    width: 100vw
+    padding-top: 60px
+    margin-left: 20px
+    border: none
+    background: none
+    gap: 20px
+
+.top
+  height: 610px
+  +breakpoints.mobile
+    display: none
+
+.timePeriodController
+  display: none
+  +breakpoints.mobile
+    display: flex
+    align-items: center
+    gap: 40px
+
+.pagination
+  display: none
+  +breakpoints.mobile
+  display: block

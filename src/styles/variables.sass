@@ -1,0 +1,20 @@
+@use "sass:map"
+
+$colors: ('primary': #42567A,
+          'text': #42567A,
+          'background': #F4F5F9,
+          'border': #3877EE1A,
+          'black_blue': #42567A, 
+          'blue': #3877EE, 
+          'iris': #5D5FEF, 
+          'fuschina': #EF5DA8,
+          'white': #FFFFFF
+        )
+
+@function color($key, $opacity: 1)
+  @if map.has-key($colors, $key)
+    @if $opacity == 1
+      @return map.get($colors, $key)
+    @return rgba(map.get($colors, $key), $opacity)
+  @warn "Unknown color: `#{$key}`"
+  @return null

@@ -1,0 +1,13 @@
+@use "../../../styles/variables"
+
+.pagination
+  display: flex
+  gap: 10px
+
+.paginationPoint
+  border-radius: 100%
+  background: variables.color('primary', 0.2)
+  width: 6px
+  height: 6px
+  &Active
+    background: variables.color('primary')

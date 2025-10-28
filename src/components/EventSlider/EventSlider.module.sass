@@ -1,0 +1,84 @@
+@use "../../styles/variables"
+@use "../../styles/breakpoints"
+
+.slider
+  display: flex
+  align-items: center
+  position: relative
+  transition: opacity var(--transition-time) ease-in-out
+  padding-left: 80px
+  width: 100%
+  max-width: 1200px
+  +breakpoints.mobile
+    padding-left: 0
+
+.sliderHidden
+  opacity: 0
+
+.sliderVisible
+  opacity: 1
+
+.slide
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+  width: 320px
+  height: 135px
+  +breakpoints.mobile
+    max-width: 166px
+
+:global(.swiper-slide-next)
+  +breakpoints.mobile
+    opacity: 40%
+
+// :global(.swiper-wrapper)
+//   gap: 80px
+//   +breakpoints.mobile
+//     gap: 25px
+
+.prevButton
+  left: 20px
+
+.nextButton
+  right: -40px
+
+.sliderButton
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  z-index: 2
+
+  min-width: 40px
+  min-height: 40px
+  max-width: 40px
+  max-height: 40px
+  padding: 16px
+
+  border-radius: 50%
+  box-shadow: 0 0 15px variables.color('border')
+  &:global(.swiper-button-disabled)
+    visibility: hidden
+  +breakpoints.mobile
+    display: none
+
+.swiper-button-disabled
+  visibility: hidden
+  opacity: 0
+  background: red
+
+.sliderContainer
+  display: flex
+  gap: 80px
+
+.slideYear
+  color: variables.color('blue')
+  line-height: 120%
+  font-family: Bebas Neue
+  font-size: 25px
+
+.slideText
+  line-height: 30px
+  font-size: 20px
+  color: variables.color('black_blue')
